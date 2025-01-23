@@ -45,7 +45,8 @@ A classic game of Tic Tac Toe, a two-player game that is played on a 3x3 grid. T
 -   [] Function to handle player moves and alternate turns between player X and player O
 -   [] Function to check for the winner (rows, columns, diagonals)
 -   [] Create ID's for DOM elements
+-   [] A function that is responsible for keeping track of the status of the game
 
---
+---
 
 More to be added as I work through the project
