@@ -18,3 +18,12 @@ h1 {
   text-align: center;
   font-size: 80px;
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #ecb4c2;
+  border: 20px solid #ecb4e2;
+  border-radius: 8px;
+  cursor: pointer;
+}
