@@ -25,6 +25,7 @@ const handleBoxClick = (event: Event) => {
         box.innerHTML = currentPlayer
         box.classList.add("played");
         currentPlayer = currentPlayer === "X" ? "O" : "X"
+        statusDisplay.textContent = `${currentPlayer}'s turn`;
     }
 }
 
