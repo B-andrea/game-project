@@ -7,8 +7,9 @@ Meaning
 - The current state of the game isn't tied (all boxes filled with no winning combination)
 */
 
-let gameState = new Array(9).fill([""]);
+let gameState = new Array(9).fill("");
 let currentPlayer = "X";
+let isGameOver = false;
 
 // Selecting HTML element from our page
 const boxBtns = document.querySelectorAll<HTMLButtonElement>(".box")
@@ -18,19 +19,29 @@ const resetBtn = document.querySelector<HTMLButtonElement>("#resetBtn")
 
 
 const handleBoxClick = (event: Event) => {
+    if (isGameOver) {
+        return;
+    }
+
     const box = event.currentTarget as HTMLButtonElement
     const index = Array.from(boxBtns).indexOf(box);
     // convert boxBtns into an array to use array methods and find the index of clicked cell
     if (gameState[index] === "") {
         // update the sameState array with the current player's symbol
-        gameState[index] === currentPlayer;
+        gameState[index] = currentPlayer;
     }
+
     if (box) {
         box.innerHTML = currentPlayer
         // display the current players symbol on the clicked cell
         box.classList.add("played");
-        currentPlayer = currentPlayer === "X" ? "O" : "X"
-        statusDisplay.textContent = `${currentPlayer}'s turn`;
+
+        isGameOver = checkWinner();
+
+        if (!isGameOver) {
+            currentPlayer = currentPlayer === "X" ? "O" : "X"
+            statusDisplay.textContent = `${currentPlayer}'s turn`;
+        }
     }
 }
 
@@ -45,22 +56,21 @@ const checkWinner = () => {
         // destructure the current combination into a, b, and c
         const [a, b, c] = winCombination[i];
 
-        if (gameState[a] !== '' && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+        if (gameState[a] !== '' && gameState[a] === currentPlayer && gameState[b] === currentPlayer && gameState[c] === currentPlayer) {
             statusDisplay.textContent = `${currentPlayer} wins!`;
-            return;
             // exit function after a winner is found
-
+            return true;
         }
     }
 
     if (!gameState.includes("")) {
         statusDisplay.textContent = "It's a draw!";
+        return true
     }
 
+    return false
 };
 
 
 
 
-// const playGame = (e: Event) => {
-//     let currentPlayer = ""
