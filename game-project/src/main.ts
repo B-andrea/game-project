@@ -13,8 +13,7 @@ let isGameOver = false;
 
 // Selecting HTML element from our page
 const boxBtns = document.querySelectorAll<HTMLButtonElement>(".box")
-const statusDisplay = document.querySelector<HTMLHeadingElement>("#statusDisplay")
-const startBtn = document.querySelector<HTMLButtonElement>("#startBtn")
+const statusDisplay = document.querySelector<HTMLHeadingElement>("#statusDisplay")!
 const resetBtn = document.querySelector<HTMLButtonElement>("#resetBtn")
 
 
@@ -70,6 +69,20 @@ const checkWinner = () => {
 
     return false
 };
+
+const resetGame = () => {
+    gameState = new Array(9).fill("");
+    boxBtns.forEach(box => {
+        box.innerHTML = "";
+        box.classList.remove("played");
+    });
+    currentPlayer = "X";
+    statusDisplay.textContent = `${currentPlayer} begins!`;
+    isGameOver = false;
+
+}
+
+resetBtn?.addEventListener("click", resetGame);
 
 
 
