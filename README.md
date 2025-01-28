@@ -12,17 +12,18 @@ A classic game of Tic Tac Toe, a two-player game that is played on a 3x3 grid. T
 
 ## HTML/SCSS
 
--   [] The title of the game above the game board
+-   [x] The title of the game above the game board
 -   [] Add a font and font sizing to the title
--   [] A div that will contain a 3x3 grid of 9 buttons that will serve as the game board
--   [] Each button is a clickable cell in the grid
--   [] A start button to begin the game
--   [] A button to restart the game
+-   [x] A div that will contain a 3x3 grid of 9 buttons that will serve as the game board
+-   [x] Styling the gameboard - add hover effect
+-   [x] Each button is a clickable cell in the grid
+-   [x] A start button to begin the game
+-   [x] A button to restart the game
 -   [] A div that will contain a display of the current player's turn or the game result (win or draw)
--   [] Center the body using flexbox
+-   [x] Center the body using flexbox
 -   [] "X" and "O" markers styled with distinct colours
 -   [] Styling for the start and restart button, with hover effect
--   [] Colours to fonts, background and game board
+-   [x] Colours to fonts, background and game board
 
 ---
 
