@@ -53,7 +53,7 @@ A classic game of Tic Tac Toe, a two-player game that is played on a 3x3 grid. T
 -   [x] Add a query selector for restart button
 -   [x] Create a function to handle the reset of the game
 -   [x] eventListeners should look out for clicks
-    -   [x]Listen for click on restart game
+    -   [x] Listen for click on restart game
     -   [x] Listen for click on each grid cell that will call the function keeping track of the game state
 -   [x] Function to handle player moves and alternate turns between player X and player O
 -   [x] Function to check for the winner (rows, columns, diagonals)
